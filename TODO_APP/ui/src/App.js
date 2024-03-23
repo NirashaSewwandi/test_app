@@ -13,12 +13,12 @@ const darkTheme = createTheme({
 });
 
 export default function App() {
-  const [tasks, setTasks] = useState([]); // Initialize tasks as an empty array
+  const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
     try {
       const { data } = await axios.get(API_URL);
-      setTasks(data); // Set tasks to the fetched data (assuming it's an array)
+      setTasks(data);
     } catch (err) {
       console.log(err);
     }
@@ -35,6 +35,7 @@ export default function App() {
       {tasks.length > 0 && tasks.map((task) => (
         <Task task={task} key={task.id} fetchTasks={fetchTasks} />
       ))}
+      {/* Optionally add a loading indicator here if needed */}
     </ThemeProvider>
   );
 }
