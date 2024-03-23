@@ -33,7 +33,9 @@ export default function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <AddTaskForm fetchTasks={fetchTasks} />
-      
+      {tasks.map((task)=>{
+        <Task task={task} key={task.id} fetchTasks={fetchTasks}/>
+      })}
     </ThemeProvider>
   );
 }
