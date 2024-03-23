@@ -32,10 +32,9 @@ export default function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <AddTaskForm fetchTasks={fetchTasks} />
-      {tasks.length > 0 && tasks.map((task) => (
+      {tasks.map((task) => (
         <Task task={task} key={task.id} fetchTasks={fetchTasks} />
       ))}
-      {/* Optionally add a loading indicator here if needed */}
     </ThemeProvider>
   );
 }
