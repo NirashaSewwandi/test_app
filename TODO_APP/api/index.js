@@ -1,7 +1,7 @@
 
 import express from 'express';
-import { fetchTasks, createTasks, updateTasks, deleteTasks } from './task';
-import ServerlessHttp from 'serverless-http';
+import { fetchTasks, createTasks, updateTasks, deleteTasks } from './task.js';
+import Serverless from 'serverless-http';
 import cors from "cors";
 
 const app = express()
@@ -62,4 +62,4 @@ app.listen(port, () => {
 })
 }
 
-export const handler = ServerlessHttp(app);
+export const handler = Serverless(app);
